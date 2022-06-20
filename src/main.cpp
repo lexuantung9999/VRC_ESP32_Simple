@@ -59,7 +59,7 @@ void VRC_Control(){
     }
     else val_RY = 0;
     if(val_RX>=NOISE_J_UP || val_RX<=NOISE_J_DOWN){
-      val_RX = map(val_RX,0,255,MAX_PWM,-MAX_PWM)*ROTATE_SPEED_SCALE;
+      val_RX = map(val_RX,0,255,MAX_PWM,-MAX_PWM);
     }
     else val_RX=0;
 
