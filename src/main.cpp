@@ -6,9 +6,7 @@
 #include <malloc.h>
 #include <math.h>
 
-#define GAMEPAD_LOG_INFO  0
-#define TEST_CASE 0 
-#define AUTO_LINE 1
+
 DCMotor         VRC_Motor;
 Servo_Motor     VRC_Servo;
 PS2X            VRC_PS2;
