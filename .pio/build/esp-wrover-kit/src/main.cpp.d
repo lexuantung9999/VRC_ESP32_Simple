@@ -129,28 +129,4 @@
  lib/EEB/EEB.h lib/Adafruit_PWMServoDriver/Adafruit_PWMServoDriver.h \
  C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h \
  C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
- src/main.h lib/PS2X_lib/PS2X_lib.h lib/FastLED/FastLED.h \
- lib/FastLED/cpp_compat.h lib/FastLED/FastLED.h \
- lib/FastLED/fastled_config.h lib/FastLED/led_sysdefs.h \
- lib/FastLED/platforms/esp/32/led_sysdefs_esp32.h \
- lib/FastLED/fastled_delay.h lib/FastLED/bitswap.h \
- lib/FastLED/controller.h lib/FastLED/pixeltypes.h lib/FastLED/lib8tion.h \
- lib/FastLED/lib8tion/math8.h lib/FastLED/lib8tion/scale8.h \
- lib/FastLED/lib8tion/scale8.h lib/FastLED/lib8tion/random8.h \
- lib/FastLED/lib8tion/trig8.h lib/FastLED/color.h lib/FastLED/fastpin.h \
- lib/FastLED/fastspi_types.h lib/FastLED/dmx.h lib/FastLED/platforms.h \
- lib/FastLED/platforms/esp/32/fastled_esp32.h \
- lib/FastLED/platforms/esp/32/fastpin_esp32.h \
- lib/FastLED/platforms/esp/32/clockless_rmt_esp32.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include/driver/rmt.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ringbuf/include/freertos/ringbuf.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/rmt_struct.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/rmt_types.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include/driver/periph_ctrl.h \
- C:/Users/lexua/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/periph_defs.h \
- lib/FastLED/fastled_progmem.h lib/FastLED/hsv2rgb.h \
- lib/FastLED/colorutils.h lib/FastLED/pixelset.h \
- lib/FastLED/colorpalettes.h lib/FastLED/noise.h lib/FastLED/power_mgt.h \
- lib/FastLED/fastspi.h lib/FastLED/fastspi_bitbang.h \
- lib/FastLED/chipsets.h lib/MPU6050/MPU6050.h lib/MPU6050/I2Cdev.h \
- lib/MPU6050/I2Cdev.h lib/Line_Following_Argorithm/line_follow.h
+ src/main.h lib/PS2X_lib/PS2X_lib.h

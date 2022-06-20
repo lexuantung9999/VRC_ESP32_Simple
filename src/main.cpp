@@ -5,7 +5,6 @@
 #include <PS2X_lib.h>
 #include <malloc.h>
 #include <math.h>
-#include <I2Cdev.h>
 
 #define GAMEPAD_LOG_INFO  0
 #define TEST_CASE 0 
@@ -18,14 +17,9 @@ char PS2_text[100];
 int16_t pwm_left, pwm_right;
 bool dir_left, dir_right;
 
-int stt_servo = 0;
-int pick_up_stt = 0, rotate_stt = 0;
-bool holder_stt=0;
-bool mode;
 
 #ifndef MAX_PWM
   uint16_t MAX_PWM = 700;
-  uint16_t MAX_LIFT = 1600;
 #endif
 
 /*!
@@ -50,25 +44,6 @@ void vTimerCallback(TimerHandle_t xTimer){
     }
 }
 
-void pick_up_box(){
-  VRC_Servo.Angle(180,PICK_UP_SERVO1);
-  VRC_Servo.Angle(0,PICK_UP_SERVO2);
-  stt_servo = 1;
-  pick_up_stt = PICK_UP;
-}
-
-void remove_box(){
-  VRC_Servo.Angle(0,PICK_UP_SERVO1);
-  VRC_Servo.Angle(180,PICK_UP_SERVO2);
-  stt_servo = -1;
-  pick_up_stt = PICK_DOWN;
-}
-
-void stop_box(){
-  VRC_Servo.Stop(PICK_UP_SERVO1); 
-  VRC_Servo.Stop(PICK_UP_SERVO2); 
-  pick_up_stt = PICK_STOP;
-}
 
 void VRC_Control(){
  
@@ -154,7 +129,7 @@ void VRC_Control(){
     // **** Your code Here ***** //
   }
 
-  if(VRC_PS2.Button(PSB_PAD_LEFT)){
+  if(VRC_PS2.ButtonPressed(PSB_PAD_LEFT)){
     // **** Your code Here ***** //
   }
 
