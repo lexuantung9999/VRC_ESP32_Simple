@@ -185,6 +185,29 @@ void VRC_Control(){
 
   if(VRC_PS2.ButtonPressed(PSB_CIRCLE)){
      // **** Your code Here ***** //
+     // chế độ auto
+     // chạy thẳng vào line 1 đoạn
+     VRC_Motor.Run(LEFT_MOTOR,700,1);
+     VRC_Motor.Run(RIGHT_MOTOR,700,1);
+     delay(4000);
+     //dừng robot
+     VRC_Motor.Stop(LEFT_MOTOR); VRC_Motor.Stop(RIGHT_MOTOR);
+     //nâng lên
+     VRC_Motor.Lift(LIFT_MOTOR,LIFT_UP,4000);
+     delay(3000);
+     VRC_Motor.Lift(LIFT_MOTOR,LIFT_STOP,0);
+     //nhả kẹp;
+     VRC_Servo.Angle(180,Servo2);
+     delay(1000);
+     // hạ xuống
+     VRC_Motor.Lift(LIFT_MOTOR,LIFT_DOWN,4000);
+     delay(3000);
+     VRC_Motor.Lift(LIFT_MOTOR,LIFT_STOP,0);
+     //lùi ra
+     VRC_Motor.Run(LEFT_MOTOR,700,0);
+     VRC_Motor.Run(RIGHT_MOTOR,700,0);
+     delay(4000);
+     VRC_Motor.Stop(LEFT_MOTOR); VRC_Motor.Stop(RIGHT_MOTOR);
   }
 
   if(VRC_PS2.ButtonPressed(PSB_TRIANGLE)){
