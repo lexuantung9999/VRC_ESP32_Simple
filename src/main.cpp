@@ -105,23 +105,75 @@ void VRC_Control(){
     // Serial.println(PS2_text);
   #endif 
 
-
-  // *********** Control Pick box ******************************* //
+  // Servo đóng mở kẹp
   if(VRC_PS2.ButtonPressed(PSB_L2)){
     // **** Your code Here ***** //
+    VRC_Servo.Angle(90, Servo2);
   }
 
   if(VRC_PS2.ButtonPressed(PSB_R2)){
     // **** Your code Here ***** //
+    VRC_Servo.Angle(180, Servo2);
   }
 
-  if(VRC_PS2.ButtonPressed(PSB_PAD_UP)){
+  //Servo xoay 
+  if(VRC_PS2.ButtonPressed(PSB_L1)){
     // **** Your code Here ***** //
+    VRC_Servo.Angle(0, Servo1);
   }
 
-  if(VRC_PS2.ButtonPressed(PSB_PAD_DOWN)){
+
+  if(VRC_PS2.ButtonPressed(PSB_R1)){
     // **** Your code Here ***** //
+    VRC_Servo.Stop(Servo1);
   }
+
+
+  // ************* Cơ cấu nâng hạ, 2 nút lên xuống, động cơ thứ 4 ****************** //
+  // ******** nhấn giữ nút up-> động cơ lên, nhấn giữ nút down, động cơ xuống **** //
+  // ************ Nâng lên **************** //
+  if(VRC_PS2.Button(PSB_PAD_UP)){
+    // **** Your code Here ***** //
+    VRC_Motor.Lift(LIFT_MOTOR, LIFT_UP, 3000);
+  }
+  else if(VRC_PS2.ButtonReleased(PSB_PAD_UP)){
+    VRC_Motor.Lift(LIFT_MOTOR, LIFT_STOP,0);
+  }
+
+  // ************ Hạ xuống ******************** //
+  if(VRC_PS2.Button(PSB_PAD_DOWN)){
+    // **** Your code Here ***** //
+    VRC_Motor.Lift(LIFT_MOTOR, LIFT_DOWN, 1000);
+  }
+  else if(VRC_PS2.ButtonReleased(PSB_PAD_DOWN)){
+    VRC_Motor.Lift(LIFT_MOTOR, LIFT_STOP,0);
+  }
+
+  // ****************** Hết hàm nâng hạ ************************************ //
+
+
+    // ************* Cơ cấu tịnh tiến trục x, 2 nút trái phải, động cơ thứ 3 ****************** //
+  // ******** tưong tự như động cơ nâng hạ **** //
+  // ************ Ra **************** //
+  if(VRC_PS2.Button(PSB_PAD_LEFT)){
+    // **** Your code Here ***** //
+    VRC_Motor.Run(MOTOR4,1000,1);
+  }
+  else if(VRC_PS2.ButtonReleased(PSB_PAD_LEFT)){
+    VRC_Motor.Stop(MOTOR4);
+  }
+
+  // ************ Vào ******************** //
+  if(VRC_PS2.Button(PSB_PAD_RIGHT)){
+    // **** Your code Here ***** //
+    VRC_Motor.Run(MOTOR4,1000,1);
+  }
+  else if(VRC_PS2.ButtonReleased(PSB_PAD_RIGHT)){
+    VRC_Motor.Stop(MOTOR4);
+  }
+
+  // ****************** Hết hàm tịnh tiến ************************************ //
+
 
   if(VRC_PS2.ButtonPressed(PSB_SQUARE)){
     // **** Your code Here ***** //
@@ -131,16 +183,7 @@ void VRC_Control(){
     // **** Your code Here ***** //
   }
 
-  if(VRC_PS2.ButtonPressed(PSB_L1)){
-    // **** Your code Here ***** //
-  }
-
-
-  if(VRC_PS2.ButtonPressed(PSB_R1)){
-    // **** Your code Here ***** //
-  }
-
-    if(VRC_PS2.ButtonPressed(PSB_CIRCLE)){
+  if(VRC_PS2.ButtonPressed(PSB_CIRCLE)){
      // **** Your code Here ***** //
   }
 
@@ -152,22 +195,14 @@ void VRC_Control(){
     // **** Your code Here ***** //
   }
 
-
-  if(VRC_PS2.ButtonPressed(PSB_L3)){
-      // **** Your code Here ***** //
-  }
-  if(VRC_PS2.ButtonPressed(PSB_R3)){
-      // **** Your code Here ***** //
-  }
-
-  
 }
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
   GPIO_config();
-  
+  VRC_Motor.Init();
+  VRC_Servo.Init();
 
   //config ps2:
   int err = -1;
@@ -198,7 +233,6 @@ void loop() {
   
 // ********************** END CONTROL************* //
 }
-
 
 
 
